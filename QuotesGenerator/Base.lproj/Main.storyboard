@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명언생성기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrB-lm-LmM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="명언생성기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrB-lm-LmM">
                                 <rect key="frame" x="24" y="68" width="366" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -41,7 +42,7 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="8Lc-1i-jiL" firstAttribute="top" secondItem="ghp-Xs-3mi" secondAttribute="bottom" constant="20" id="0Mq-Bg-04e"/>
-                                    <constraint firstAttribute="trailing" secondItem="ghp-Xs-3mi" secondAttribute="trailing" constant="20" id="11Z-AK-Gr4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ghp-Xs-3mi" secondAttribute="trailing" constant="20" id="11Z-AK-Gr4"/>
                                     <constraint firstItem="ghp-Xs-3mi" firstAttribute="leading" secondItem="zV7-kl-Qru" secondAttribute="leading" constant="20" id="Eb2-Aw-FPQ"/>
                                     <constraint firstAttribute="trailing" secondItem="8Lc-1i-jiL" secondAttribute="trailing" constant="20" id="HFp-Zi-aAG"/>
                                     <constraint firstAttribute="bottom" secondItem="8Lc-1i-jiL" secondAttribute="bottom" constant="20" id="InR-Mv-ziw"/>
@@ -58,6 +59,9 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="명언생성"/>
                                 <buttonConfiguration key="configuration" style="plain" title="명언생성"/>
+                                <connections>
+                                    <action selector="tapQuoteGeneratorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="89S-Lp-gYB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -68,12 +72,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qrB-lm-LmM" secondAttribute="trailing" constant="24" id="J2e-55-GiC"/>
                             <constraint firstItem="xL1-vG-epH" firstAttribute="centerX" secondItem="ghp-Xs-3mi" secondAttribute="centerX" id="KJR-DZ-vYz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zV7-kl-Qru" secondAttribute="trailing" constant="24" id="OQz-ly-g2B"/>
+                            <constraint firstItem="qrB-lm-LmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="QXP-rl-og0"/>
                             <constraint firstItem="xL1-vG-epH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-530" id="ZiD-yu-xEd"/>
+                            <constraint firstItem="xL1-vG-epH" firstAttribute="centerX" secondItem="zV7-kl-Qru" secondAttribute="centerX" id="i7N-wf-nxR"/>
                             <constraint firstItem="zV7-kl-Qru" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="j5D-ZH-G3x"/>
                             <constraint firstItem="xL1-vG-epH" firstAttribute="top" secondItem="zV7-kl-Qru" secondAttribute="bottom" constant="20" id="mwn-ou-r2l"/>
                             <constraint firstItem="qrB-lm-LmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="x7B-CY-10r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="8Lc-1i-jiL" id="3dY-Dj-tmG"/>
+                        <outlet property="quoteLabel" destination="ghp-Xs-3mi" id="Ft0-vV-4Rw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
